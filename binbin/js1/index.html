@@ -20,13 +20,16 @@
   在事件处理函数中
   获取aqi-input输入的值，并显示在aqi-display中
   */
-  var btn=document.getElementById("button");
+  
+  //定义基础变量
+  var btn=document.getElementById("button"); 
   var aqiDisplayText=document.getElementById("aqi-display");
-  console.log(aqiDisplayText._proto_);
-  btn.onclick=function(){
-      var aqiInputText=document.getElementById("aqi-input").value;
-      aqiDisplayText.innerText=aqiInputText;
+  var aqiInputText;
 
+ //添加btn的点击事件
+  btn.onclick=function(){
+      aqiInputText=document.getElementById("aqi-input").value; //获取aqi-input值
+      aqiDisplayText.innerText=aqiInputText;//更改display的值为input
   }
 
 })();
