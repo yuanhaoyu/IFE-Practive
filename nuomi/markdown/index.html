@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="edit">
+        <textarea name="" id="content" cols="30" rows="10"></textarea>
+        <button onclick="editOk()">确定</button>
+    </div>
+    <div id="show"></div>
+</body>
+<script src="index.js"></script>
+<script>
+    function editOk(){
+        var content=document.getElementById("content").value;
+
+        //var test="> 12312\n > ssss\n # 12312\n ## ssss \n - 12312\n * ssss\n ``` hellow ``` \n 1. 111\n 2. 333";
+        var node=markdownMake.build(content);
+        var show=document.getElementById("show");
+        show.innerHTML=node;
+    }
+
+
+</script>
+</html>
