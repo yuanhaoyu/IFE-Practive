@@ -89,8 +89,6 @@ var aqiData = [
               levelLast=numToCh(levelArr[a])+levelLast;
           }else if(a==1){
               levelLast=levelLast+"十"+numToCh(levelArr[a]);
-          }else if(a==2){
-              levelLast=numToCh(levelArr[a])+"百"+levelLast;
           }else{
                 alert("城市条数暂不支持上百");
                 return false;
