@@ -46,7 +46,7 @@
         var node="";
         if(showArr.length!=0){
             for(var i in showArr){
-                node=node+"<div class=red onclick=remove('"+showArr[i]+"')>"+showArr[i]+"</div>";
+                node=node+"<div class='red'    onclick=remove('"+showArr[i]+"')>"+showArr[i]+"</div>";
             }
         }
         show.innerHTML=node;
@@ -60,7 +60,6 @@
         return true;
     }
     function remove(index){
-        alert(index);
         for(var i in showArr){
             if(index==showArr[i]){
                 showArr.splice(parseInt(i),1);
