@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .show{
+            margin: 5px;
+            width: 500px;
+            height: 50px;
+            
+        }
+        .red{
+            background: orangered;
+            color: white;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="aciton">
+        <input type="text" id="inputValue" maxlength="4">
+        <button onclick="LeftIn()">左侧入</button>
+        <button onclick="RightIn()">右侧入</button>
+        <button onclick="LeftOut()">左侧出</button>
+        <button onclick="RightOut()">右侧出</button>
+    </div>
+    <div class="show" id="showContent">
+
+    </div>
+</body>
+<script>
+    var show=document.getElementById("showContent");    
+    var showArr=[];
+    function render(){
+        var node="";
+        if(showArr.length!=0){
+            for(var i in showArr){
+                node=node+"<div class='red' onclick='remove("+showArr[i]+")'>"+showArr[i]+"</div>";
+            }
+        }
+        show.innerHTML=node;
+        document.getElementById("inputValue").value="";
+    }
+    function judge(){
+        if(!document.getElementById("inputValue").value){
+            alert("请输入！");
+            return false;
+        }
+        return true;
+    }
+    function remove(index){
+        for(var i in showArr){
+            if(index==showArr[i]){
+                showArr.splice(parseInt(i),1);
+            }
+        }
+        render();
+    }
+    function LeftIn(){
+        if(!judge())    return false;
+        var inputValue=document.getElementById("inputValue").value;
+        showArr.unshift(inputValue);
+        render();
+    }
+    function LeftOut(){
+        if(showArr.length===0){
+            alert("没有数组");
+            return false;
+        }
+        var delNode=showArr[0];
+        showArr.shift(inputValue);
+        render();
+        alert(delNode);
+        
+    }
+    function RightIn(){
+        if(!judge())    return false;       
+        var inputValue=document.getElementById("inputValue").value;
+        showArr.push(inputValue);
+        render();
+    }
+    function RightOut(){
+        if(showArr.length===0){
+            alert("没有数组");
+            return false;
+        }     
+        var delNode=showArr[showArr.length-1];        
+        showArr.pop(inputValue);
+        render();
+        alert(delNode);
+    }
+
+</script>
+</html>
