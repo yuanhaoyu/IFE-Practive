@@ -8,8 +8,6 @@ function check_repeat_word(word){
     let myReg = /\b([A-Za-z]+)\s\1\b/
     let flag = myReg.test(word)
     let test = myReg.exec(word)
-    console.log(flag)
-    console.log(test)    
 }
 
 check_ch_phone(15882810521)

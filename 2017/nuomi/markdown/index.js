@@ -24,7 +24,7 @@ var markdownMake={
         return msg.replace(myRex,"<h5>$2</h5>")
     },
     h6:function(msg){
-        var myRex=/(#####)\s([^\n]*)/g;        
+        var myRex=/(#####)\s([^\n]*)/g;
         return msg.replace(myRex,"<h6>$2</h6>")
     },
     list:function(msg){
