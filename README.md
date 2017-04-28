@@ -3,6 +3,6 @@
 
 ---
 
-预览地址： https://yuanhaoyu.github.io/IFE-2017/ + (文件夹路径)
+预览地址： https://yuanhaoyu.github.io/IFE-Practive/ + (文件夹路径)
 
 相关思路： http://blog.csdn.net/sinat_22043763
